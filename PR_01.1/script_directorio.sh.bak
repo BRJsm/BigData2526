@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DIRECTORIO="$1"
+EXTENSION=".bak"
+
+if [ ! -d "$DIRECTORIO" ]; then
+	echo "Error '$DIRECTORIO' no es un directorio válido"
+	exit 1
+fi
+
+for  archivo in "$DIRECTORIO"/*; do
+	if [ -f "$archivo" ]; then
+		mv "$archivo" "$archivo$EXTENSION"
+	fi
+done
+
+echo "Extensión '$EXTENSION' añadida a los archivos en '$DIRECTORIO'."
