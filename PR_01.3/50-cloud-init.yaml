@@ -1,0 +1,13 @@
+network:
+  ethernets:
+    enp0s3:
+      addresses:
+      - 10.140.42.116/22
+      nameservers:
+        addresses:
+          - 8.8.8.8
+          - 8.8.4.4
+      routes:
+          - to: default
+            via: 10.140.43.254
+  version: 2
